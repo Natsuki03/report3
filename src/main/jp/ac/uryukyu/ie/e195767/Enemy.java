@@ -1,6 +1,9 @@
 package jp.ac.uryukyu.ie.e195767;
 
 public class Enemy extends LivingThing{
+    int hitPoint = getHitPoint();
+    boolean dead = getDead();
+    String name = getName();
 
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -21,7 +24,7 @@ public class Enemy extends LivingThing{
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
-            dead = true;
+            setDead(true);
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
     }
